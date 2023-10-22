@@ -1,4 +1,4 @@
-סעיף א
+סעיף ב
 class AnalogToDigitalConverter:
     def __init__(self, analog_value):
         self.analog_value = analog_value  
