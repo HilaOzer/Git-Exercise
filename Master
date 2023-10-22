@@ -1,0 +1,33 @@
+סעיף א
+class AnalogToDigitalConverter:
+    def __init__(self, analog_value):
+        self.analog_value = analog_value  
+
+    def __init__(self,analog_value ,max_voltage=5, num_bits=10):
+        self.max_voltage = max_voltage
+        self.num_bits = num_bits
+        self.analog_value = analog_value 
+
+
+    def to_digital(self): 
+        if self.analog_value < 0 or self.analog_value > self.max_voltage:
+          raise ValueError(f"Analog value must be within the range [0, {self.max_voltage}].")
+        digital_value = int(analog_value / self.max_voltage * (2**self.num_bits - 1))
+        return digital_value
+
+    def set_digital_value(self, analog_value):
+        self.analog_value = analog_value
+
+    def set_max_voltage(self, max_voltage):
+        self.max_voltage = max_voltage
+
+    def set_num_bits(self, num_bits):
+        self.num_bits = num_bits
+
+
+converter = AnalogToDigitalConverter(5)
+analog_value = 5  
+converter.analog_value = analog_value
+digital_value = converter.to_digital()
+print(f"analog value:{analog_value}, digital value: {digital_value}")
+
